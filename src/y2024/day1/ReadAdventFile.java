@@ -1,30 +1,13 @@
-import java.io.*;
+package y2024.day1;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class DistanceLists {
-    public static void main(String[] args) {
-
-        String filename = "advent1input.txt";
-        List<Integer>list1;
-        List<Integer>list2;
-        int totalLength = 0;
-        ReadAdventFile adventReader = new ReadAdventFile(filename);
-        list1 = adventReader.getList1();
-        list2 = adventReader.getList2();
-        Collections.sort(list1);
-        Collections.sort(list2);
-
-
-        for (int i = 0; i < list1.size(); i++){
-            totalLength += Math.abs(list1.get(i)-list2.get(i));
-        }
-        System.out.println(totalLength);
-    }
-}
-
-class ReadAdventFile{
+public class ReadAdventFile{
     List<Integer> list1 = new ArrayList<>();
     List<Integer> list2 = new ArrayList<>();
 
@@ -52,4 +35,3 @@ class ReadAdventFile{
         return list2;
     }
 }
-
