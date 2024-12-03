@@ -8,7 +8,7 @@ public class UnusualReportSafety {
         String filename = "src/y2024/day2/input-advent2024-day2.txt";
         List<String> fileData;
         List<List<Integer>> reports;
-        fileData = AdventFileReader.readFileToList(filename);
+        fileData = AdventFileReader.readFileToStringList(filename);
         reports  = AdventFileReader.readStringListToIntegerTable(fileData);
 
         int safeReportCounter = 0;

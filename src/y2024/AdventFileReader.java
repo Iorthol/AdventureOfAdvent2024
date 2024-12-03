@@ -7,9 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdventFileReader {
-    public static List<String> readFileToList(String fileName){
+    public static List<String> readFileToStringList(String fileName){
         try {
             return new ArrayList<>(Files.readAllLines(Paths.get(fileName)));
+        } catch (IOException e){
+            System.err.println("Error reading file.");
+            return null;
+        }
+    }
+
+    public static String readFileToString(String fileName){
+        try {
+            return Files.readString(Paths.get(fileName));
         } catch (IOException e){
             System.err.println("Error reading file.");
             return null;
